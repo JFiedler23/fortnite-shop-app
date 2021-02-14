@@ -8,7 +8,7 @@ function Home(){
 
     const getItems = async () => {
         const { data } = await axios('https://fortnite-api.com/v2/shop/br');
-        setFeaturedItems(data.data.featured.entries);
+        setFeaturedItems([...data.data.featured.entries, ...data.data.specialFeatured.entries]);
         setDailyItems(data.data.daily.entries);
     }
 
@@ -43,11 +43,11 @@ function Home(){
     return(
         <div className="container">
             <h1 id="page-greeting">Welcome to the Fortnite Mini Shop!</h1>
-            <h3>Featured Items</h3>
+            <h2>Featured Items</h2>
             <div className="item-list">
                 {featured}
             </div>
-            <h3>Daily Items</h3>
+            <h2>Daily Items</h2>
             <div className="item-list">
                 {daily}
             </div>

@@ -4,6 +4,10 @@
   --epic: radial-gradient(#b132bf, purple);
   --legendary: radial-gradient(#e6c455, orange);
   --mythic: gold;
+  --light-green: #60db4b;
+  --light-blue: #4caed9;
+  --light-purple: #af54e3;
+  --light-orange: #e6c455;
 }
 
 .container{
@@ -75,25 +79,33 @@ a:hover{
 
 #uncommon{
   background: var(--uncommon);
-  border-width: 2px;
-  border-color: darkgreen;
+  border: 3px solid var(--light-green);
 }
 
 #rare{
   background: var(--rare);
+  border: 3px solid var(--light-blue);
 }
 
 #epic{
   background: var(--epic);
+  border: 3px solid var(--light-purple);
 }
 
 #legendary{
   background: var(--legendary);
+  border: 3px solid var(--light-orange)
 }
 
 @media screen and (min-width: 320px){
+  #page-greeting{
+    font-size: calc(20px + 2 * ((100vw - 320px) / 680));
+  }
   .nav{
     width: 100%;
+  }
+  .item{
+    margin: 5px 5px 5px 5px;
   }
   .item-image{
     width: 150px;
@@ -102,20 +114,32 @@ a:hover{
   .item-list{
     width: 100%;
   }
+  .item-price{
+    font-size: calc(14px + 2 * ((100vw - 320px) / 680));
+  }
 }
 
 @media screen and (min-width: 720px){
+  #page-greeting{
+    font-size: 32px;
+  }
   .nav{
     width: 70%;
+  }
+  .item{
+    margin: 8px 8px 8px 8px;
   }
   .item-name{
     font-size: 20px;
   }
   .item-image{
-    width: 200px;
-    height: 200px;
+    width: 225px;
+    height: 225px;
   }
   .item-list{
     width: 70%;
+  }
+  .item-price{
+    font-size: 18px;
   }
 }
