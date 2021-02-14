@@ -1,8 +1,8 @@
 :root {
-  --uncommon: green;
-  --rare: blue;
-  --epic: purple;
-  --legendary: orange;
+  --uncommon: radial-gradient(#2cb04f, green);
+  --rare: radial-gradient(#3477c9, blue);
+  --epic: radial-gradient(#b132bf, purple);
+  --legendary: radial-gradient(#e6c455, orange);
   --mythic: gold;
 }
 
@@ -44,11 +44,26 @@ a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  position: relative;
 }
 
-.item-image{
-  width: 200px;
-  height: 200px;
+.item-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.item-name{
+  font-weight: bold;
+}
+
+.price-icon{
+  width: 15px;
+  height: 15px;
 }
 
 .item-list{
@@ -59,29 +74,48 @@ a:hover{
 }
 
 #uncommon{
-  background-color: var(--uncommon);
+  background: var(--uncommon);
+  border-width: 2px;
+  border-color: darkgreen;
 }
 
 #rare{
-  background-color: var(--rare);
+  background: var(--rare);
 }
 
 #epic{
-  background-color: var(--epic);
+  background: var(--epic);
 }
 
 #legendary{
-  background-color: var(--legendary);
+  background: var(--legendary);
 }
 
 @media screen and (min-width: 320px){
   .nav{
     width: 100%;
   }
+  .item-image{
+    width: 150px;
+    height: 150px;
+  }
+  .item-list{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 720px){
   .nav{
+    width: 70%;
+  }
+  .item-name{
+    font-size: 20px;
+  }
+  .item-image{
+    width: 200px;
+    height: 200px;
+  }
+  .item-list{
     width: 70%;
   }
 }
