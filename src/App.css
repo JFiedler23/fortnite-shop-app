@@ -44,12 +44,16 @@ a:hover{
   color: #3d6687;
 }
 
-.item{
+.item-show, .item-true{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   position: relative;
+}
+
+.item-false{
+  display: none;
 }
 
 .item-content{
@@ -97,6 +101,14 @@ a:hover{
   border: 3px solid var(--light-orange)
 }
 
+button{
+  border-radius: 2px;
+  border: none;
+  background: #3477c9;
+  color: white;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 320px){
   #page-greeting{
     font-size: calc(20px + 2 * ((100vw - 320px) / 680));
@@ -104,7 +116,7 @@ a:hover{
   .nav{
     width: 100%;
   }
-  .item{
+  .item-show, .item-true{
     margin: 5px 5px 5px 5px;
   }
   .item-image{
@@ -117,6 +129,11 @@ a:hover{
   .item-price{
     font-size: calc(14px + 2 * ((100vw - 320px) / 680));
   }
+  button{
+    font-size: calc(14px + 2 * ((100vw - 320px) / 680));
+    width: 85%;
+    height: 35px;
+  }
 }
 
 @media screen and (min-width: 720px){
@@ -126,7 +143,7 @@ a:hover{
   .nav{
     width: 70%;
   }
-  .item{
+  .item-show, .item-true{
     margin: 8px 8px 8px 8px;
   }
   .item-name{
@@ -141,5 +158,10 @@ a:hover{
   }
   .item-price{
     font-size: 18px;
+  }
+  button{
+    font-size: 20px;
+    width: 55.5%;
+    height: 50px;
   }
 }
