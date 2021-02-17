@@ -158,6 +158,12 @@ a:hover{
   margin-top: 20px;
 }
 
+#uncommon-text, #rare-text, #epic-text, #legendary-text{
+  font-size: 18px;
+  padding: 4px 10px 4px 10px;
+  margin-right: 4px;
+}
+
 @media screen and (min-width: 320px){
   #page-greeting{
     font-size: calc(20px + 2 * ((100vw - 320px) / 680));
@@ -215,11 +221,6 @@ a:hover{
     font-size: 20px;
     width: 55.5%;
     height: 50px;
-  }
-  #uncommon-text, #rare-text, #epic-text, #legendary-text{
-    font-size: 18px;
-    padding: 4px 10px 4px 10px;
-    margin-right: 4px;
   }
   #type-text{
     font-size: 18px;
