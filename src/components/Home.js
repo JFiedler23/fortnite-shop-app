@@ -66,7 +66,7 @@ function Home(){
             <div className="item-list">
                 {featured}
             </div>
-            <button onClick={handleClick}>{buttonText}</button>
+            <button id="show-more-button" onClick={handleClick}>{buttonText}</button>
             <h2>Daily Items</h2>
             <div className="item-list">
                 {daily}
