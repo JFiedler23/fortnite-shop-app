@@ -2,17 +2,17 @@ import React from 'react';
 import axios from 'axios';
 import Item from './Item';
 
-function Home(){
+function Home(props){
     const [featuredItems, setFeaturedItems] = React.useState([]);
     const [dailyItems, setDailyItems] = React.useState([]);
     const [clicked, setClicked] = React.useState(false);
     const [buttonText, setButtonText] = React.useState("Show more");
 
     const getItems = async () => {
-        const { data } = await axios('https://fortnite-api.com/v2/shop/br');
+        const { data } = await axios('https://fortnite-api.com/v2/shop/br/combined');
 
         //sorting by price descending
-        setFeaturedItems([...data.data.featured.entries, ...data.data.specialFeatured.entries].sort((a, b) => {
+        setFeaturedItems([...data.data.featured.entries].sort((a, b) => {
             return b.finalPrice - a.finalPrice;
         }));
 
@@ -28,6 +28,7 @@ function Home(){
 
         return(
             <Item key={item.offerId}
+            id={item.offerId.slice(item.offerId.indexOf("/") + 1)}
             class={i < 8 ? "show" : clicked} 
             name={item.bundle ? item.bundle.name : item.items[0].name} 
             price={item.finalPrice} 
@@ -41,6 +42,7 @@ function Home(){
 
         return(
             <Item key={item.offerId}
+            id={item.offerId.slice(item.offerId.indexOf("/") + 1)}
             class={i < 8 ? "show" : clicked}
             name={item.bundle ? item.bundle.name : item.items[0].name} 
             price={item.finalPrice} 
@@ -58,7 +60,6 @@ function Home(){
         }
         setClicked(!clicked);
     }
-
     return(
         <div className="container">
             <h1 id="page-greeting">Welcome to the Fortnite Mini Shop!</h1>

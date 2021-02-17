@@ -2,7 +2,7 @@
   --uncommon: radial-gradient(#2cb04f, green);
   --rare: radial-gradient(#3477c9, blue);
   --epic: radial-gradient(#b132bf, purple);
-  --legendary: radial-gradient(#e6c455, orange);
+  --legendary: radial-gradient(#e3ab4b, #c26e08);
   --mythic: gold;
   --light-green: #60db4b;
   --light-blue: #4caed9;
@@ -101,12 +101,61 @@ a:hover{
   border: 3px solid var(--light-orange)
 }
 
+#uncommon-text{
+  background: var(--uncommon);
+}
+
+#rare-text{
+  background: var(--rare);
+}
+
+#epic-text{
+  background: var(--epic);
+}
+
+#legendary-text{
+  background: var(--legendary);
+}
+
 #show-more-button{
   border-radius: 2px;
   border: none;
   background: #3477c9;
   color: white;
   font-weight: bold;
+}
+
+.page-container{
+  display: flex;
+  align-items: center;
+}
+
+.page-image-container, .page-image{
+  width: 250px;
+  height: 250px;
+}
+
+.page-content-price{
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.page-price-icon{
+  width: 25px;
+  height: 25px;
+}
+
+.page-content-description{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.page-content-info{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 320px){
@@ -133,6 +182,9 @@ a:hover{
     font-size: calc(14px + 2 * ((100vw - 320px) / 680));
     width: 85%;
     height: 35px;
+  }
+  .page-container{
+    flex-direction: column;
   }
 }
 
@@ -163,5 +215,19 @@ a:hover{
     font-size: 20px;
     width: 55.5%;
     height: 50px;
+  }
+  #uncommon-text, #rare-text, #epic-text, #legendary-text{
+    font-size: 18px;
+    padding: 4px 10px 4px 10px;
+    margin-right: 4px;
+  }
+  #type-text{
+    font-size: 18px;
+  }
+  .page-container{
+    flex-direction: row;
+  }
+  .page-content{
+    margin-left: 20px;
   }
 }
